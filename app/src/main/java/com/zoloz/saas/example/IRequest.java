@@ -1,9 +1,5 @@
-package com.knero.lotty.example;
+package com.zoloz.saas.example;
 
-/**
- * @author zhaocheng.luo
- * @since 2019-12-26
- */
 public interface IRequest {
 
     String request(String requestUrl, String requestData);

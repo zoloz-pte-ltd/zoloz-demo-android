@@ -1,4 +1,4 @@
-package com.knero.lotty.example;
+package com.zoloz.saas.example;
 
 
 import java.io.BufferedReader;
@@ -7,10 +7,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * @author zhaocheng.luo
- * @since 2018/10/22
- */
 public class LocalRequest implements IRequest {
     public String request(String requestUrl, String requestData) {
         try {

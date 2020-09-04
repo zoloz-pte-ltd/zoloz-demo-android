@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.alipay.zbase.saas.icbc"
+        applicationId "com.zoloz.saas.example"
         minSdkVersion 18
         targetSdkVersion 28
         versionCode 29

@@ -1,4 +1,4 @@
-package com.knero.lotty.example;
+package com.zoloz.saas.example;
 
 
 import android.app.AlertDialog;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     //public static final String DEFAULT_PUBKEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+xWyrMYViLrdV8VAh4BrHbFyKbY8rcaSZA5C7eajHH/3oYZQUexvwTFd3LmoeATfNlZS4xxVWhKZXxSIeH7MogrDB//vDIWviHT3/5cW/dHqqK2SU6hpsDiOyxxXLhqRhyKMxs7gLfg1WvMUlhOoJuVtyFQC4/501cf2Z/4PIVaHh6xq7v9Ot5RFmOP2n+H2NaJyDl1vtRU5wdJZM+X1iP/hEA+Ms2riRCU+vf3020BNWNsw09qYvJIqTS1IE3wle6z/H+5teN0alBEJlNVqcGXvyzw2hqhbQLW+G+eONW99S+8nNqub7V11TwSLzmgVDm9IQZ1P8mARzDhlqfpVwIDAQAB";
 
     private Handler mHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void startEkyc(View view) {
+    public void startZoloz(View view) {
         runOnIoThread(new Runnable() {
             @Override
             public void run() {
@@ -107,11 +108,11 @@ public class MainActivity extends AppCompatActivity {
                 request.zlzConfig = initResponse.clientCfg;
                 request.bizConfig.put(ZLZConstants.CONTEXT, MainActivity.this);
                 request.bizConfig.put(ZLZConstants.PUBLIC_KEY, initResponse.rsaPubKey);
-                Log.d("LZC", "request success:");
+                Log.d(TAG, "request success:");
                 mHandler.postAtFrontOfQueue(new Runnable() {
                     @Override
                     public void run() {
-                        Log.d("LZC", "start_coonected");
+                        Log.d(TAG, "start zoloz");
                         zlzFacade.start(request, new IZLZCallback() {
                             @Override
                             public void onCompleted(ZLZResponse response) {
