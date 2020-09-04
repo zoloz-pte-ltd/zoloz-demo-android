@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/init_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http://54.255.250.226:8341/webapi/ekycDemoService/initialize"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startEkyc"
+        android:text="start " />
+
+
+</LinearLayout>
