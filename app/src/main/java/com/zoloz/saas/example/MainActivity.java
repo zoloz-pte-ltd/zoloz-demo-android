@@ -108,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
                 request.zlzConfig = initResponse.clientCfg;
                 request.bizConfig.put(ZLZConstants.CONTEXT, MainActivity.this);
                 request.bizConfig.put(ZLZConstants.PUBLIC_KEY, initResponse.rsaPubKey);
+                request.bizConfig.put(ZLZConstants.CHAMELEON_CONFIG_PATH, "config_realId.zip");
+                request.bizConfig.put(ZLZConstants.LOCALE, "en-US");
                 Log.d(TAG, "request success:");
                 mHandler.postAtFrontOfQueue(new Runnable() {
                     @Override
