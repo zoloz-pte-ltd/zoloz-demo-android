@@ -25,6 +25,7 @@ import com.ap.zoloz.hummer.api.ZLZConstants;
 import com.ap.zoloz.hummer.api.ZLZFacade;
 import com.ap.zoloz.hummer.api.ZLZRequest;
 import com.ap.zoloz.hummer.api.ZLZResponse;
+import com.zoloz.builder.BuildConfig;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -108,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
                 request.zlzConfig = initResponse.clientCfg;
                 request.bizConfig.put(ZLZConstants.CONTEXT, MainActivity.this);
                 request.bizConfig.put(ZLZConstants.PUBLIC_KEY, initResponse.rsaPubKey);
-                request.bizConfig.put(ZLZConstants.CHAMELEON_CONFIG_PATH, "config_realId.zip");
                 request.bizConfig.put(ZLZConstants.LOCALE, "en-US");
+                request.bizConfig.put(ZLZConstants.LICENSE, "5jhyo19WX90JFeEjWSPTHSO9IEFI/C08mHhtJfI8d6N3fETGDwHtIGEj/RIMvlxMXMEqPpl/dmbXJQqlf3Z3+FIouGAKX9s6cuVCSiHgGSCEIXcm2Q4UuG0Ka5kEd7N/b3bTJzWXIEFhwlMF4FkKRcAgNaNEeiLGKh6hTWxV+j8MomRjZJ0aCuAiWmXgHX/7Z09jySEo51NuRcYjM54iUF/gAQ6ARF1z7AQho21MeZ8ABYZhfHvFXiGgflZA7goEpD5aSNkGA5ZMf2XqPRTlTFF6nCo/vXINRM8BAY4hd2jHQDeZUHp95AUDsj5WJJlEbf9ADz7hEjWlcw1m/V4wnG0MZ/NfAYwiYnr7UjyVLAMpmS0MsVxOZ5ooK5xgUCPsLx6AIkJH7y42mz5jPsMjAKAhdXvNGyi7d15F0iIy7V9SfYBAd6ViWXb9WxDjRn1AzD8gnkwCeM8/J4xPdCmfKBTmLUNi3yoWv0ZJepoOdbdDd3LcRAv/Pkhl5BExsTpIYckDdposV0LiGna4bEtAllY=");
                 Log.d(TAG, "request success:");
                 mHandler.postAtFrontOfQueue(new Runnable() {
                     @Override
@@ -183,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
             jsonObject.put("userId", "216610000001376836453");
             jsonObject.put("sceneCode", "registration");
             jsonObject.put("metaInfo", ZLZFacade.getMetaInfo(this));
+            jsonObject.put("v", BuildConfig.VERSION_NAME);
             JSONObject envData = new JSONObject();
             envData.put("envName", "default");
             jsonObject.put("envData", envData);
