@@ -9,8 +9,15 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
-
+plugins {
+    id "com.github.hierynomus.license" version "0.15.0"
+}
 allprojects {
+    apply plugin: "license"
+
+    license {
+        header = rootProject.file('LICENSE.md')
+    }
     repositories {
         flatDir {
             dirs '../aars'
