@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
 
-    public static final String DEFAULT_URL = "http://192.168.3.8:8080/api/realid/initialize";
+    public static final String DEFAULT_URL = "http://<lan_ip>:8080/api/realid/initialize";
 
     private Handler mHandler;
 
