@@ -63,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String DEFAULT_URL = "http://192.168.3.8:8080/api/realid/initialize";
 
-    //public static final String DEFAULT_PUBKEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+xWyrMYViLrdV8VAh4BrHbFyKbY8rcaSZA5C7eajHH/3oYZQUexvwTFd3LmoeATfNlZS4xxVWhKZXxSIeH7MogrDB//vDIWviHT3/5cW/dHqqK2SU6hpsDiOyxxXLhqRhyKMxs7gLfg1WvMUlhOoJuVtyFQC4/501cf2Z/4PIVaHh6xq7v9Ot5RFmOP2n+H2NaJyDl1vtRU5wdJZM+X1iP/hEA+Ms2riRCU+vf3020BNWNsw09qYvJIqTS1IE3wle6z/H+5teN0alBEJlNVqcGXvyzw2hqhbQLW+G+eONW99S+8nNqub7V11TwSLzmgVDm9IQZ1P8mARzDhlqfpVwIDAQAB";
-
     private Handler mHandler;
 
     @Override
@@ -133,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
                 request.bizConfig.put(ZLZConstants.CONTEXT, MainActivity.this);
                 request.bizConfig.put(ZLZConstants.PUBLIC_KEY, initResponse.rsaPubKey);
                 request.bizConfig.put(ZLZConstants.LOCALE, "en-US");
-                request.bizConfig.put(ZLZConstants.LICENSE, "5jhyo19WX90JFeEjWSPTHSO9IEFI/C08mHhtJfI8d6N3fETGDwHtIGEj/RIMvlxMXMEqPpl/dmbXJQqlf3Z3+FIouGAKX9s6cuVCSiHgGSCEIXcm2Q4UuG0Ka5kEd7N/b3bTJzWXIEFhwlMF4FkKRcAgNaNEeiLGKh6hTWxV+j8MomRjZJ0aCuAiWmXgHX/7Z09jySEo51NuRcYjM54iUF/gAQ6ARF1z7AQho21MeZ8ABYZhfHvFXiGgflZA7goEpD5aSNkGA5ZMf2XqPRTlTFF6nCo/vXINRM8BAY4hd2jHQDeZUHp95AUDsj5WJJlEbf9ADz7hEjWlcw1m/V4wnG0MZ/NfAYwiYnr7UjyVLAMpmS0MsVxOZ5ooK5xgUCPsLx6AIkJH7y42mz5jPsMjAKAhdXvNGyi7d15F0iIy7V9SfYBAd6ViWXb9WxDjRn1AzD8gnkwCeM8/J4xPdCmfKBTmLUNi3yoWv0ZJepoOdbdDd3LcRAv/Pkhl5BExsTpIYckDdposV0LiGna4bEtAllY=");
                 Log.d(TAG, "request success:");
                 mHandler.postAtFrontOfQueue(new Runnable() {
                     @Override
