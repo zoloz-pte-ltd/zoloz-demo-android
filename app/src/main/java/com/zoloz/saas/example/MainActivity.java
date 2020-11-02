@@ -1,18 +1,18 @@
 /**
  * MIT License
- *
+ * <p>
  * Copyright (c) 2020 ZOLOZ-PTE-LTD
- *
+ * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -55,13 +55,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
 
-    private static String[] PERMISSIONS_STORAGE = {
-            "android.permission.READ_EXTERNAL_STORAGE",
-            "android.permission.WRITE_EXTERNAL_STORAGE"};
-
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
 
-    public static final String DEFAULT_URL = "http://<lan_ip>:8080/api/realid/initialize";
 
     private Handler mHandler;
 
@@ -70,37 +65,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mHandler = new Handler();
-        try {
-            //检测是否有写的权限
-            int permission = ActivityCompat.checkSelfPermission(this,
-                    "android.permission.WRITE_EXTERNAL_STORAGE");
-            if (permission != PackageManager.PERMISSION_GRANTED) {
-                // 没有写的权限，去申请写的权限，会弹出对话框
-                ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        EditText editText = findViewById(R.id.init_url);
-        editText.setText(getSaveUrl(getDefaultUrl()));
-
-    }
-
-
-    protected String getDefaultUrl() {
-        return DEFAULT_URL;
-    }
-
-
-    private String getSaveUrl(String defaultUrl) {
-        SharedPreferences preferences = getSharedPreferences("url", MODE_PRIVATE);
-        return preferences.getString(this.getClass().getName(), defaultUrl);
-    }
-
-    private void saveUrl(String url) {
-        SharedPreferences preferences = getSharedPreferences("url", MODE_PRIVATE);
-        preferences.edit().putString(this.getClass().getName(), url).commit();
+        EditTextUtils.setup(this, R.id.init_host);
+        EditTextUtils.setup(this, R.id.init_ref);
+        EditTextUtils.setup(this, R.id.init_doc_type);
+        EditTextUtils.setup(this, R.id.init_service_level);
     }
 
 
@@ -178,7 +146,8 @@ public class MainActivity extends AppCompatActivity {
 
     protected String mockInitRequest() {
         IRequest request = generateRequest();
-        String result = request.request(getUrl(), generateRequestData());
+        String requestUrl = EditTextUtils.getAndSave(this, R.id.init_host) + EditTextUtils.getAndSave(this, R.id.init_ref);
+        String result = request.request(requestUrl, generateRequestData());
         return result;
     }
 
@@ -186,33 +155,18 @@ public class MainActivity extends AppCompatActivity {
         return new LocalRequest();
     }
 
-    protected String getUrl() {
-        EditText editText = findViewById(R.id.init_url);
-        String url = editText.getText().toString();
-        if (TextUtils.isEmpty(url)) {
-            return getDefaultUrl();
-        } else {
-            saveUrl(url);
-            return url;
-        }
-    }
 
     public String generateRequestData() {
         try {
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("bizId", "test-bizId");
-            jsonObject.put("userId", "216610000001376836453");
-            jsonObject.put("sceneCode", "registration");
             jsonObject.put("metaInfo", ZLZFacade.getMetaInfo(this));
+            jsonObject.put("serviceLevel", EditTextUtils.getAndSave(this, R.id.init_service_level));
+            jsonObject.put("docType", EditTextUtils.getAndSave(this, R.id.init_doc_type));
             jsonObject.put("v", BuildConfig.VERSION_NAME);
-            JSONObject envData = new JSONObject();
-            envData.put("envName", "default");
-            jsonObject.put("envData", envData);
             return jsonObject.toString();
         } catch (JSONException e) {
             e.printStackTrace();
             return "";
         }
     }
-
 }
