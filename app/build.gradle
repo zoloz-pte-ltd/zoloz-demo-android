@@ -27,5 +27,5 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.alibaba:fastjson:1.1.68.android'
     implementation "com.squareup.okio:okio:1.7.0@jar"
-    implementation(name: 'saas-bundle-1.0.0.201104175453', ext: 'aar')
+    implementation(name: 'saas-bundle-1.0.0.201105120416', ext: 'aar')
 }
