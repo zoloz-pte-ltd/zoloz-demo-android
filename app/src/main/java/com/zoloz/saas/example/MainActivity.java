@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                         zlzFacade.start(request, new IZLZCallback() {
                             @Override
                             public void onCompleted(ZLZResponse response) {
-                                showResponse(initResponse.transactionId, response);
+                                checkResult(initResponse.transactionId);
                             }
 
                             @Override
@@ -122,11 +122,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void showResponse(final String flowId, ZLZResponse response) {
+    private void checkResult(final String transactionId) {
+        runOnIoThread(new Runnable() {
+            @Override
+            public void run() {
+                IRequest request = new LocalRequest();
+                String requestUrl = EditTextUtils.getAndSave(MainActivity.this, R.id.init_host) + "/api/realid/checkresult";
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("transactionId", transactionId);
+                String requestData = jsonObject.toString();
+                final String result = request.request(requestUrl, requestData);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        showResponse(transactionId, result);
+                    }
+                });
+            }
+        });
+    }
+
+    private void showResponse(final String flowId, String response) {
         AlertDialog alertDialog = new AlertDialog.Builder(this)
-                .setTitle("Result")
-                .setMessage(JSON.toJSONString(response)
-                )
+                .setTitle("Check Result")
+                .setMessage(response)
                 .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -145,28 +164,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected String mockInitRequest() {
-        IRequest request = generateRequest();
+        IRequest request = new LocalRequest();
         String requestUrl = EditTextUtils.getAndSave(this, R.id.init_host) + EditTextUtils.getAndSave(this, R.id.init_ref);
-        String result = request.request(requestUrl, generateRequestData());
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("metaInfo", ZLZFacade.getMetaInfo(this));
+        jsonObject.put("serviceLevel", EditTextUtils.getAndSave(this, R.id.init_service_level));
+        jsonObject.put("docType", EditTextUtils.getAndSave(this, R.id.init_doc_type));
+        jsonObject.put("v", BuildConfig.VERSION_NAME);
+        String requestData = jsonObject.toString();
+        String result = request.request(requestUrl, requestData);
         return result;
-    }
-
-    protected IRequest generateRequest() {
-        return new LocalRequest();
-    }
-
-
-    public String generateRequestData() {
-        try {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("metaInfo", ZLZFacade.getMetaInfo(this));
-            jsonObject.put("serviceLevel", EditTextUtils.getAndSave(this, R.id.init_service_level));
-            jsonObject.put("docType", EditTextUtils.getAndSave(this, R.id.init_doc_type));
-            jsonObject.put("v", BuildConfig.VERSION_NAME);
-            return jsonObject.toString();
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "";
-        }
     }
 }
