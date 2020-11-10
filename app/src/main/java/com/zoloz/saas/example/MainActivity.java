@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void onInterrupted(ZLZResponse response) {
-                                showResponse(initResponse.transactionId, response);
+                                showResponse(initResponse.transactionId, JSON.toJSONString(response));
                                 Toast.makeText(MainActivity.this, "interrupted", Toast.LENGTH_SHORT).show();
                             }
                         });
