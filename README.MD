@@ -24,9 +24,9 @@ cd zoloz-demo-android
 
 #### Example useage
 
-1. open the application, Fill the inbox of "HOST" with "http://<ip>:<port>"，the `ip` and the `port` are values get from [server example](https://github.com/zoloz-pte-ltd/zoloz-api-sdk) .
+1. open the application, Fill the inbox of "HOST" with "http://lan_ip:lan_port"，the `ip` and the `port` are values get from [server example](https://github.com/zoloz-pte-ltd/zoloz-api-sdk) .
 
-   ![example homepage](https://gw.alicdn.com/tfs/TB1MksVq_M11u4jSZPxXXahcXXa-540-960.png)
+   ![example homepage](https://gw.alicdn.com/tfs/TB1ZKLS1FY7gK0jSZKzXXaikpXa-818-730.png)
 
 2. click "start zoloz" button to start the eKYC flow.
 
