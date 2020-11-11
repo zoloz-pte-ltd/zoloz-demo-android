@@ -37,6 +37,13 @@ allprojects {
         maven {
             url  "https://dl.bintray.com/zolozclient/maven"
         }
+        maven {
+            credentials {
+                username "admin"
+                password "**"
+            }
+            url "http://mvn.test.alipay.net:8081/artifactory/content/groups/alipay-mobile"
+        }
     }
 }
 task clean(type: Delete) {
