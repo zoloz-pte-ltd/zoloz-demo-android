@@ -24,7 +24,7 @@ cd zoloz-demo-android
 
 #### Example useage
 
-1. open the application, Fill the inbox of "HOST" with "http://lan_ip:lan_port"，the `ip` and the `port` are values get from [server example](https://github.com/zoloz-pte-ltd/zoloz-integration-examples/tree/master/basic/realid-native) .
+1. open the application, Fill the inbox of "HOST" with "http://lan_ip:lan_port"，the `ip` and the `port` are values get from [server example](https://github.com/zoloz-pte-ltd/zoloz-integration-examples).
 
    ![example homepage](https://gw.alicdn.com/tfs/TB1ZKLS1FY7gK0jSZKzXXaikpXa-818-730.png)
 
@@ -52,7 +52,7 @@ implementation "com.alibaba:fastjson:1.1.68.android"
 
 3. Start the SDK
 
-   To start SDK, some runtime configurations need to be obtained from server first, refer to step 4 in the [sequence diagram](https://docs.zoloz.com/zoloz/saas/docs/fgnasg#WY0gq), and in this step, meta info must be sent to server.
+   To start SDK, some runtime configurations need to be obtained from server first, refer to step 4 in the [sequence diagram](https://github.com/zoloz-pte-ltd/zoloz-integration-examples/tree/master/basic/realid-native), and in this step, meta info must be sent to server.
 
    To get the meta info from our SDK, you can simply do this:
 
