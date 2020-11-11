@@ -24,7 +24,7 @@ cd zoloz-demo-android
 
 #### Example useage
 
-1. open the application, Fill the inbox of "HOST" with "http://lan_ip:lan_port"，the `ip` and the `port` are values get from [server example](https://github.com/zoloz-pte-ltd/zoloz-api-sdk) .
+1. open the application, Fill the inbox of "HOST" with "http://lan_ip:lan_port"，the `ip` and the `port` are values get from [server example](https://github.com/zoloz-pte-ltd/zoloz-integration-examples/tree/master/basic/realid-native) .
 
    ![example homepage](https://gw.alicdn.com/tfs/TB1ZKLS1FY7gK0jSZKzXXaikpXa-818-730.png)
 
@@ -42,7 +42,7 @@ maven {
 }
 ```
 
-2.  Add the dependences to your build.gradle:
+2.  In your module's (app-level) Gradle file (usually app/build.gradle), add Zoloz sdk as dependecy.
 
 ```groovy
 implementation 'com.zoloz.android.build:zoloz-kit:1.0.0'
