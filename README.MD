@@ -52,7 +52,7 @@ implementation "com.alibaba:fastjson:1.1.68.android"
 
 3. Start the SDK
 
-   To start SDK, some runtime configurations need to be obtained from server first, refer to step 4 in the [sequence diagram](https://github.com/zoloz-pte-ltd/zoloz-integration-examples/tree/master/basic/realid-native), and in this step, meta info must be sent to server.
+   To start the SDK, you need to call RealId initialize API with SDK meta info to obtain the runtime configurations firstly. It is strongly recommended to called the API from server-side. please refer to [this example](https://github.com/zoloz-pte-ltd/zoloz-integration-examples/tree/master/basic/realid-native) to setup a minimum web server to act as your biz server bridging the demo app and the RealId service.
 
    To get the meta info from our SDK, you can simply do this:
 
