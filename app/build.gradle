@@ -28,5 +28,5 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.alibaba:fastjson:1.1.68.android'
     implementation "com.squareup.okio:okio:1.7.0@jar"
-    implementation 'com.zlz.android:opensaas:1.0.0.201111151137'
+    implementation 'com.zoloz.android.build:zolozkit:1.0.0'
 }
