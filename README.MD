@@ -38,14 +38,14 @@ cd zoloz-demo-android
 
 ```groovy
 maven {
-    url  "https://dl.bintray.com/zolozclient/maven"
+    url  "https://dl.bintray.com/zolozclient/release"
 }
 ```
 
 2.  Add the dependences to your build.gradle:
 
 ```groovy
-implementation 'com.zoloz.android.build:zoloz-build:1.0.0'
+implementation 'com.zoloz.android.build:zoloz-kit:1.0.0'
 implementation "com.squareup.okio:okio:1.7.0@jar"
 implementation "com.alibaba:fastjson:1.1.68.android"
 ```
