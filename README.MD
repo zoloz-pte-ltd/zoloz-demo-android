@@ -1,4 +1,4 @@
-## ZOLOZ iOS Example
+## ZOLOZ Android Example
 
 ### Background
 
@@ -22,7 +22,7 @@ cd zoloz-demo-android
 ./gradlew :app:installDebug
 ```
 
-### Example useage
+### Example usage
 
 1. Refer to [this example](https://github.com/zoloz-pte-ltd/zoloz-integration-examples/tree/master/basic/realid-native) to setup a minimum web server to act as your biz server bridging the demo app and the RealId service. 
 
