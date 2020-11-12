@@ -21,34 +21,31 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-apply plugin: 'com.android.application'
+package com.zoloz.saas.example;
 
-android {
-    compileSdkVersion 28
-    defaultConfig {
-        applicationId "com.zoloz.saas.example"
-        minSdkVersion 18
-        targetSdkVersion 28
-        versionCode 29
-        versionName "1.1.0.6"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import android.widget.EditText;
+
+public class EditTextUtils {
+    public static final String SAAS_EXAMPLE_SHARED_PREFERENCES = "saas_example_data";
+
+    public static void setup(Activity activity, int resId) {
+        EditText textView = activity.findViewById(resId);
+        SharedPreferences preferences = activity.getSharedPreferences(SAAS_EXAMPLE_SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        String savedValue = preferences.getString(String.valueOf(resId), "");
+        if (!TextUtils.isEmpty(savedValue)) {
+            textView.setText(savedValue);
         }
     }
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['src/main/libs']
-        }
-    }
-}
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.alibaba:fastjson:1.1.68.android'
-    implementation "com.squareup.okio:okio:1.7.0@jar"
-    implementation 'com.zoloz.android.build:zolozkit:1.0.0'
+    public static String getAndSave(Activity activity, int resId) {
+        EditText textView = activity.findViewById(resId);
+        String currentValue = textView.getText().toString();
+        SharedPreferences preferences = activity.getSharedPreferences(SAAS_EXAMPLE_SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        preferences.edit().putString(String.valueOf(resId), currentValue).commit();
+        return currentValue;
+    }
 }

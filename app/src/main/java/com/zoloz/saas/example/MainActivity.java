@@ -55,13 +55,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
 
-    private static String[] PERMISSIONS_STORAGE = {
-            "android.permission.READ_EXTERNAL_STORAGE",
-            "android.permission.WRITE_EXTERNAL_STORAGE"};
-
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
 
-    public static final String DEFAULT_URL = "http://<lan_ip>:8080/api/realid/initialize";
 
     private Handler mHandler;
 
@@ -70,37 +65,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mHandler = new Handler();
-        try {
-            //检测是否有写的权限
-            int permission = ActivityCompat.checkSelfPermission(this,
-                    "android.permission.WRITE_EXTERNAL_STORAGE");
-            if (permission != PackageManager.PERMISSION_GRANTED) {
-                // 没有写的权限，去申请写的权限，会弹出对话框
-                ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        EditText editText = findViewById(R.id.init_url);
-        editText.setText(getSaveUrl(getDefaultUrl()));
-
-    }
-
-
-    protected String getDefaultUrl() {
-        return DEFAULT_URL;
-    }
-
-
-    private String getSaveUrl(String defaultUrl) {
-        SharedPreferences preferences = getSharedPreferences("url", MODE_PRIVATE);
-        return preferences.getString(this.getClass().getName(), defaultUrl);
-    }
-
-    private void saveUrl(String url) {
-        SharedPreferences preferences = getSharedPreferences("url", MODE_PRIVATE);
-        preferences.edit().putString(this.getClass().getName(), url).commit();
+        EditTextUtils.setup(this, R.id.init_host);
+        EditTextUtils.setup(this, R.id.init_ref);
+        EditTextUtils.setup(this, R.id.init_doc_type);
+        EditTextUtils.setup(this, R.id.init_service_level);
     }
 
 
@@ -139,12 +107,12 @@ public class MainActivity extends AppCompatActivity {
                         zlzFacade.start(request, new IZLZCallback() {
                             @Override
                             public void onCompleted(ZLZResponse response) {
-                                showResponse(initResponse.transactionId, response);
+                                checkResult(initResponse.transactionId);
                             }
 
                             @Override
                             public void onInterrupted(ZLZResponse response) {
-                                showResponse(initResponse.transactionId, response);
+                                showResponse(initResponse.transactionId, JSON.toJSONString(response));
                                 Toast.makeText(MainActivity.this, "interrupted", Toast.LENGTH_SHORT).show();
                             }
                         });
@@ -154,11 +122,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void showResponse(final String flowId, ZLZResponse response) {
+    private void checkResult(final String transactionId) {
+        runOnIoThread(new Runnable() {
+            @Override
+            public void run() {
+                IRequest request = new LocalRequest();
+                String requestUrl = EditTextUtils.getAndSave(MainActivity.this, R.id.init_host) + "/api/realid/checkresult";
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("transactionId", transactionId);
+                String requestData = jsonObject.toString();
+                final String result = request.request(requestUrl, requestData);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        showResponse(transactionId, result);
+                    }
+                });
+            }
+        });
+    }
+
+    private void showResponse(final String flowId, String response) {
         AlertDialog alertDialog = new AlertDialog.Builder(this)
-                .setTitle("Result")
-                .setMessage(JSON.toJSONString(response)
-                )
+                .setTitle("Check Result")
+                .setMessage(response)
                 .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -177,42 +164,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected String mockInitRequest() {
-        IRequest request = generateRequest();
-        String result = request.request(getUrl(), generateRequestData());
+        IRequest request = new LocalRequest();
+        String requestUrl = EditTextUtils.getAndSave(this, R.id.init_host) + EditTextUtils.getAndSave(this, R.id.init_ref);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("metaInfo", ZLZFacade.getMetaInfo(this));
+        jsonObject.put("serviceLevel", EditTextUtils.getAndSave(this, R.id.init_service_level));
+        jsonObject.put("docType", EditTextUtils.getAndSave(this, R.id.init_doc_type));
+        jsonObject.put("v", BuildConfig.VERSION_NAME);
+        String requestData = jsonObject.toString();
+        String result = request.request(requestUrl, requestData);
         return result;
     }
-
-    protected IRequest generateRequest() {
-        return new LocalRequest();
-    }
-
-    protected String getUrl() {
-        EditText editText = findViewById(R.id.init_url);
-        String url = editText.getText().toString();
-        if (TextUtils.isEmpty(url)) {
-            return getDefaultUrl();
-        } else {
-            saveUrl(url);
-            return url;
-        }
-    }
-
-    public String generateRequestData() {
-        try {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("bizId", "test-bizId");
-            jsonObject.put("userId", "216610000001376836453");
-            jsonObject.put("sceneCode", "registration");
-            jsonObject.put("metaInfo", ZLZFacade.getMetaInfo(this));
-            jsonObject.put("v", BuildConfig.VERSION_NAME);
-            JSONObject envData = new JSONObject();
-            envData.put("envName", "default");
-            jsonObject.put("envData", envData);
-            return jsonObject.toString();
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "";
-        }
-    }
-
 }
