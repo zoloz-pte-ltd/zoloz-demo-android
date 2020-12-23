@@ -1,0 +1,91 @@
+only:
+  triggerType:
+    - pullRequest
+    - push
+  triggerBranch:
+    prTargetBranch:
+      - ^master$
+    pushOriginalBranch:
+      - ^master$
+
+onlyExecuteLastPipeline: true
+
+stages:
+  - Check
+  - Release
+
+STC:
+  stage: Check
+  plugin: STC
+  pluginConfig:
+    checkPoints: alipay
+  checkRule:
+    - stc = 0
+  allowFailure: false
+
+PMD:
+  stage: Check
+  plugin: PMD
+  pluginConfig:
+    encoding: UTF-8
+    excludes:
+      - "**/test/**"
+    enableAdditional: true
+  checkRule:
+    - pmd1 = 0 && pmd2 = 0
+  allowFailure: true
+
+Release to Github:
+  stage: Release
+  steps:
+    - plugin: clone
+    - plugin: shell
+      inputs:
+        command: |
+          rm .aci.yml
+          rm README_INTERNAL.md
+          TITLE=$(git rev-list --pretty=oneline --max-count=1 ${ACI_COMMIT_SHA} | cut -d' ' -f2-)
+          git clone https://zolozAdmin:${ACI_VAR_github_password}@github.com/zoloz-pte-ltd/zoloz-demo-android.git ../tmp
+          rm -rf ../tmp/*
+          cp -R -n * ../tmp/
+          cd ../tmp/
+          git config user.email "zoloz-github@antgroup.com"
+          git config user.name "zolozAdmin"
+          git add .
+          git commit -m "$TITLE"
+          git push origin
+  only:
+    triggerType:
+      - push
+    triggerBranch:
+      pushOriginalBranch:
+        - ^master$
+
+notifications:
+  "开源代码发布成功":
+    acting:
+      - Release to Github
+    channels:
+      - https://oapi.dingtalk.com/robot/send?access_token=93789a7deb3dadc51a993b97fd5088d00d13ff86660a91d13d637dc39d18b761
+    level: JOB
+    template: JOB ${ACI_JOB_NAME} SUCCESS [ ${ACI_COMMIT_REF_NAME}-${ACI_COMMIT_SHA}-${ACI_COMMIT_TITLE} ] ACI Pipeline详情：${ACI_PIPELINE_URL}
+    type: DINGTALK
+    when: SUCCESS
+    at:
+      - 矩诗
+      - +65-98636803
+
+  "开源代码发布失败":
+    acting:
+      - Check
+      - Build
+      - Release to Github
+    channels:
+      - https://oapi.dingtalk.com/robot/send?access_token=93789a7deb3dadc51a993b97fd5088d00d13ff86660a91d13d637dc39d18b761
+    level: JOB
+    template: JOB ${ACI_JOB_NAME} FAIL [ ${ACI_COMMIT_REF_NAME}-${ACI_COMMIT_SHA}-${ACI_COMMIT_TITLE} ] ACI Pipeline 运行失败，看看你干了什么好事！Pipeline详情：${ACI_PIPELINE_URL}
+    type: DINGTALK
+    when: FAIL
+    at:
+      - 矩诗
+      - +65-98636803
