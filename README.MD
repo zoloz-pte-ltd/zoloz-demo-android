@@ -36,18 +36,16 @@ cd zoloz-demo-android
 
 ### SDK Integration
 
-1. Add private maven repository to your build.gradle:
+1. Add mavenCentral repository to your build.gradle:
 
    ```groovy
-   maven {
-       url  "https://dl.bintray.com/zolozclient/release"
-   }
+   mavenCentral()
    ```
 
 2. In your module's (app-level) Gradle file (usually app/build.gradle), add Zoloz sdk as dependecy.
 
    ```groovy
-   implementation 'com.zoloz.android.build:zolozkit:1.0.+'
+   implementation 'com.zoloz.android.build:zolozkit:1.0.3'
    implementation "com.squareup.okio:okio:1.7.0@jar"
    implementation "com.alibaba:fastjson:1.1.68.android"
    ```
