@@ -1,6 +1,11 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Version 1.2.0
+
++ Support multi face detection
++ Improve occlusion detection capabilities
+
 ## Version 1.1.0
 
 + Improve SDK security.
