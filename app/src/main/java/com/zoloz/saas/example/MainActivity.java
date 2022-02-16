@@ -127,7 +127,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 IRequest request = new LocalRequest();
-                String requestUrl = EditTextUtils.getAndSave(MainActivity.this, R.id.init_host) + "/api/realid/checkresult";
+                String requestUrl = EditTextUtils.getAndSave(MainActivity.this, R.id.init_host) + EditTextUtils.getAndSave(MainActivity.this, R.id.init_ref);
+                requestUrl = requestUrl.replaceAll("initialize", "checkresult");
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.put("transactionId", transactionId);
                 String requestData = jsonObject.toString();

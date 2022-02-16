@@ -1,6 +1,14 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Version 1.2.3.220215114217
+
++ Improve face detection capabilities
+
+## Version 1.2.2
+
++ fix the conflict class for MPaaS.
+
 ## Version 1.2.1
 
 + Improve flash detection capabilities

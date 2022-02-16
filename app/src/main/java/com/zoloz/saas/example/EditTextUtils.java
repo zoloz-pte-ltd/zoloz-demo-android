@@ -35,7 +35,7 @@ public class EditTextUtils {
     public static void setup(Activity activity, int resId) {
         EditText textView = activity.findViewById(resId);
         SharedPreferences preferences = activity.getSharedPreferences(SAAS_EXAMPLE_SHARED_PREFERENCES, Context.MODE_PRIVATE);
-        String savedValue = preferences.getString(String.valueOf(resId), "");
+        String savedValue = preferences.getString(activity.getResources().getResourceName(resId), "");
         if (!TextUtils.isEmpty(savedValue)) {
             textView.setText(savedValue);
         }
@@ -45,7 +45,7 @@ public class EditTextUtils {
         EditText textView = activity.findViewById(resId);
         String currentValue = textView.getText().toString();
         SharedPreferences preferences = activity.getSharedPreferences(SAAS_EXAMPLE_SHARED_PREFERENCES, Context.MODE_PRIVATE);
-        preferences.edit().putString(String.valueOf(resId), currentValue).commit();
+        preferences.edit().putString(activity.getResources().getResourceName(resId), currentValue).commit();
         return currentValue;
     }
 }
