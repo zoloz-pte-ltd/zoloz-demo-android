@@ -1,6 +1,9 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Version 1.2.7.220715155219
++ Improve face detection capabilities
+
 ## Version 1.2.6.220705114203
 + Fix device id issues 
 
