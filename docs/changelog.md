@@ -1,6 +1,10 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Version 1.2.9.221008144313
++ Fix some bugs.
++ Improve ui config capabilities
+
 ## Version 1.2.8.220817145238
 + Accessibility Support
 
