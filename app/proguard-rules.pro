@@ -21,3 +21,53 @@
 #-renamesourcefileattribute SourceFile
 
 #-dontshrink
+
+-keep class okio.**{
+    <fields>;
+    <methods>;
+}
+-dontwarn com.zoloz.**
+-keep class com.zoloz.zhub.**{
+  <fields>;
+   <methods>;
+}
+-keep class com.alipay.zoloz.**{
+   <fields>;
+   <methods>;
+}
+-keep class com.alipay.android.phone.zoloz.**{
+   <fields>;
+   <methods>;
+}
+-keep class com.alipay.biometrics.**{
+   <fields>;
+   <methods>;
+}
+-keep class com.alipay.bis.**{
+   <fields>;
+   <methods>;
+}
+-keep class com.alipay.mobile.security.**{
+   <fields>;
+   <methods>;
+}
+-keep class com.ap.zoloz.**{
+   <fields>;
+   <methods>;
+}
+-keep class com.ap.zhubid.endpoint.**{
+   <fields>;
+   <methods>;
+}
+-keep class com.zoloz.android.phone.zdoc.**{
+   <fields>;
+   <methods>;
+}
+-keep class zoloz.ap.com.toolkit.**{
+   <fields>;
+   <methods>;
+}
+-keep class com.zoloz.builder.** {
+   <fields>;
+   <methods>;
+}
