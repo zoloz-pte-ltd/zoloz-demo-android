@@ -46,8 +46,8 @@ cd zoloz-demo-android
 
    ```groovy
    implementation 'com.zoloz.android.build:zolozkit:1.2.11.230224141004'
-   implementation "com.squareup.okio:okio:1.7.0@jar"
-   implementation "com.alibaba:fastjson:1.1.68.android"
+   implementation "com.squareup.okio:okio:1.17.4@jar"
+   implementation 'com.alibaba:fastjson:1.2.83'
    ```
 
 3. Get meta info
