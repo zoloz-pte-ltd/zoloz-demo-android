@@ -1,6 +1,10 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+
+## Version 1.2.12.230322103026
++ Fix some bugs.
+
 ## Version 1.2.11.230224141004
 + Add text to the face capture interface as it supports displaying multiple paragraphs of custom content.
 + Fix some bugs.
