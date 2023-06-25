@@ -1,6 +1,9 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Version 1.2.16.230625174717
++ Fix some bugs.
+
 ## Version 1.2.15.230522102749
 + Fix some bugs.
 
