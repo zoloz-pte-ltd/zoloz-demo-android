@@ -55,6 +55,6 @@ dependencies {
 
     implementation 'com.alibaba:fastjson:1.2.83'
     implementation "com.squareup.okio:okio:1.17.4@jar"
-    implementation 'com.zoloz.android.build:zolozkit:1.2.16.230625174717'
+    implementation 'com.zoloz.android.build:zolozkit:1.2.17.23072111021'
     implementation("com.airbnb.android:lottie:2.7.0")
 }
