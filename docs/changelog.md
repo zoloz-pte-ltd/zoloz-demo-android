@@ -1,6 +1,21 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Version 1.3.0.230907171559
++ Fix some bugs.
+
+**Notice:**
+
+If other SDKs are integrated at the same time, and you run into issue "More than one file was found with OS independent path 'lib/arm64-v8a/libc++_shared.so'".
+The main reason is that the ZOLOZ SDK and other SDKs add the libc++_shared.so library. The solution is to add the following configuration in the build.gradle.
+
+```groovy
+  packagingOptions {
+    pickFirst 'lib/arm64-v8a/libc++_shared.so'
+    pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+  }
+```
+
 ## Version 1.2.17.230721110219
 + Fix some bugs.
 
@@ -41,7 +56,7 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 
 
 ## Version 1.2.6.220705114203
-+ Fix device id issues 
++ Fix device id issues
 
 ## Version 1.2.6.220616153250
 + Improve face detection capabilities
