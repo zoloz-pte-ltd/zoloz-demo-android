@@ -1,6 +1,11 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Version 1.3.1.230925144644
++ Fix some bugs.
++ Improve face detection capabilities
++ Add new feature for doc detection by NFC
+
 ## Version 1.3.0.230907171559
 + Fix some bugs.
 
