@@ -35,6 +35,10 @@
    <fields>;
    <methods>;
 }
+-keep class com.zoloz.zcore.facade.common.** {
+   <fields>;
+   <methods>;
+}
 -keep class com.alipay.android.phone.zoloz.**{
    <fields>;
    <methods>;
