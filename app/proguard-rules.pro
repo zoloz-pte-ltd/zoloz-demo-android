@@ -22,6 +22,14 @@
 
 #-dontshrink
 
+-keep class android.util.Log{
+    <fields>;
+    <methods>;
+}
+-keep class com.zoloz.saas.example.**{
+  <fields>;
+   <methods>;
+}
 -keep class okio.**{
     <fields>;
     <methods>;

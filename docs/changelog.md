@@ -1,6 +1,16 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Version 1.3.2.231020100216
++ Improve identification document prompt experience
+
+**Notice:**
+If you are upgrading from an older version, you need to configure the newly added text In the Portal's UI Configuration page.
+![img_1.png](img_1.png)
+If the configuration for the newly added texts, namely "zdoc_msg_too_dark", "zdoc_msg_too_bright", and "zdoc_msg_abrasion", is not available,
+the corresponding English texts will be displayed by default. This may cause inconsistency with the set language.
+I would recommend re-importing from In the Portal's UI Configuration page and configuring these new texts. Once you have made the necessary configurations, you can export the file again.
+
 ## Version 1.3.1.230925144644
 + Fix some bugs.
 + Improve face detection capabilities
