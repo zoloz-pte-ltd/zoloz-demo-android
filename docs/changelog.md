@@ -1,6 +1,11 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+
+## Version  1.3.4.231205171033
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
+
 ## Version 1.3.3.231103135532
 + Added a new operation guide diagram in the NativeSDK scanning page for Real ID and ID Recognition. Users will be prompted to center their ID within the capture box, for both the front and back sides of the document.
   **Notice:**

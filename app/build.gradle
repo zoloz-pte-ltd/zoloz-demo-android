@@ -64,7 +64,7 @@ dependencies {
 
     implementation 'com.alibaba:fastjson:1.2.83'
     implementation "com.squareup.okio:okio:1.17.4@jar"
-    implementation 'com.zoloz.android.build:zolozkit:1.3.3.231103135532'
+    implementation 'com.zoloz.android.build:zolozkit:1.3.4.231205171033'
     //if need NFC Reader, add below implementation
     //implementation 'com.zoloz.android.build:znfc:1.3.1.230925144644'
     implementation("com.airbnb.android:lottie:2.7.0")
