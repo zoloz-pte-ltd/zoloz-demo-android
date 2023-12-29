@@ -83,3 +83,6 @@
    <fields>;
    <methods>;
 }
+
+-keep class com.ant.phone.xmedia.**{*;}
+-keep class com.alipay.alipaysecuritysdk.** {*;}
