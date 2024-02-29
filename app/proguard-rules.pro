@@ -85,4 +85,12 @@
 }
 
 -keep class com.ant.phone.xmedia.**{*;}
+
+#人脸盾相关
 -keep class com.alipay.alipaysecuritysdk.** {*;}
+-keep class com.alipay.blueshield.** { *; }
+-keep class com.alipay.deviceid.** { *; }
+-keep class com.alipay.edge.** { *; }
+-keep class com.alipay.softtee.NativeHelper { *; }
+-keep class com.alipay.apmobilesecuritysdk.tool.si.SIUtils {*;}
+
