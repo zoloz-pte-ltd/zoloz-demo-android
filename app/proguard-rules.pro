@@ -35,10 +35,6 @@
     <methods>;
 }
 -dontwarn com.zoloz.**
--keep class com.zoloz.**{
-  <fields>;
-   <methods>;
-}
 -keep class com.zoloz.zhub.**{
   <fields>;
    <methods>;
