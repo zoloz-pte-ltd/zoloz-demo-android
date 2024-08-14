@@ -45,7 +45,7 @@ cd zoloz-demo-android
 2. In your module's (app-level) Gradle file (usually app/build.gradle), add Zoloz sdk as dependecy.
 
    ```groovy
-   implementation 'com.zoloz.android.build:zolozkit:1.4.2.240710110801'
+   implementation "com.zoloz.android.build:zolozkit:${zolozKitVersion}"
    implementation "com.squareup.okio:okio:1.17.4@jar"
    implementation 'com.alibaba:fastjson:2.0.21.android'
    ```
