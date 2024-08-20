@@ -96,17 +96,20 @@ The main reason is that the ZOLOZ SDK and other SDKs add the libc++_shared.so li
 ## Version 1.2.9.221014103813
 + Fix some bugs.
 
+## Deprecated
 ## Version 1.2.9.221008144313
 + Fix some bugs.
 + Improve ui config capabilities
 
+## Deprecated
 ## Version 1.2.8.220817145238
 + Accessibility Support
 
+## Deprecated
 ## Version 1.2.7.220715155219
 + Improve face detection capabilities
 
-
+## Deprecated
 ## Version 1.2.6.220705114203
 + Fix device id issues
 
