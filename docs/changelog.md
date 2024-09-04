@@ -3,6 +3,10 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 
 ## Version 1.4.4.240904145406
 + refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+**Note** : This version integrates Nearx into ZolozKit. 
++ If you have previously utilized the features of Nearx,
++ when upgrading to this version, you need to remove the line of implementation for Nearx
++ Otherwise, there will be a class conflict
 
 ## Version 1.4.3.240814151616
 + refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
