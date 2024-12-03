@@ -1,6 +1,16 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+
+## Version 1.4.7.241202192124
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
+## Version 1.4.6.241114114940
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
+## Version 1.4.5.240925162606
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
 ## Version 1.4.4.240904145406
 + refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
 **Note** : This version integrates Nearx into ZolozKit. 

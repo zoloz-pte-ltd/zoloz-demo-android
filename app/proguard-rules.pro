@@ -22,75 +22,29 @@
 
 #-dontshrink
 
--keep class android.util.Log{
-    <fields>;
-    <methods>;
-}
--keep class com.zoloz.saas.example.**{
-  <fields>;
-   <methods>;
-}
--keep class okio.**{
-    <fields>;
-    <methods>;
-}
+-keep class com.zoloz.saas.example.** { *; }
+
 -dontwarn com.zoloz.**
--keep class com.zoloz.zhub.**{
-  <fields>;
-   <methods>;
-}
--keep class com.alipay.zoloz.**{
-   <fields>;
-   <methods>;
-}
--keep class com.zoloz.zcore.facade.common.** {
-   <fields>;
-   <methods>;
-}
--keep class com.alipay.android.phone.zoloz.**{
-   <fields>;
-   <methods>;
-}
--keep class com.alipay.biometrics.**{
-   <fields>;
-   <methods>;
-}
--keep class com.alipay.bis.**{
-   <fields>;
-   <methods>;
-}
--keep class com.alipay.mobile.security.**{
-   <fields>;
-   <methods>;
-}
--keep class com.ap.zoloz.**{
-   <fields>;
-   <methods>;
-}
--keep class com.ap.zhubid.endpoint.**{
-   <fields>;
-   <methods>;
-}
--keep class com.zoloz.android.phone.zdoc.**{
-   <fields>;
-   <methods>;
-}
--keep class zoloz.ap.com.toolkit.**{
-   <fields>;
-   <methods>;
-}
--keep class com.zoloz.builder.** {
-   <fields>;
-   <methods>;
-}
 
--keep class com.ant.phone.xmedia.**{*;}
-
-#人脸盾相关
--keep class com.alipay.alipaysecuritysdk.** {*;}
+-keep class okio.** { *; }
+-keep class com.alibaba.fastjson.** { *; }
+-keep class com.alibaba.fastjson2.** { *; }
+-keep class com.zoloz.zhub.** { *; }
+-keep class com.alipay.zoloz.** { *; }
+-keep class com.zoloz.zcore.facade.common.** { *; }
+-keep class com.alipay.android.phone.zoloz.** { *; }
+-keep class com.alipay.biometrics.** { *; }
+-keep class com.alipay.bis.** { *; }
+-keep class com.alipay.mobile.security.** { *; }
+-keep class com.ap.zoloz.** { *; }
+-keep class com.ap.zhubid.endpoint.** { *; }
+-keep class com.zoloz.android.phone.zdoc.** { *; }
+-keep class zoloz.ap.com.toolkit.** { *; }
+-keep class com.zoloz.builder.** { *; }
+-keep class com.ant.phone.xmedia.** { *; }
+-keep class com.alipay.alipaysecuritysdk.** { *; }
 -keep class com.alipay.blueshield.** { *; }
 -keep class com.alipay.deviceid.** { *; }
 -keep class com.alipay.edge.** { *; }
 -keep class com.alipay.softtee.NativeHelper { *; }
--keep class com.alipay.apmobilesecuritysdk.tool.si.SIUtils {*;}
-
+-keep class com.alipay.apmobilesecuritysdk.tool.si.SIUtils { *; }
