@@ -1,6 +1,8 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Version 1.4.8.241216154318
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
 
 ## Version 1.4.7.241202192124
 + refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/

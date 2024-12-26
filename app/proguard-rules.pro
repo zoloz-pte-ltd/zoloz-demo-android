@@ -48,3 +48,5 @@
 -keep class com.alipay.edge.** { *; }
 -keep class com.alipay.softtee.NativeHelper { *; }
 -keep class com.alipay.apmobilesecuritysdk.tool.si.SIUtils { *; }
+-keep class face.security.device.api.** {*;}
+-dontwarn face.security.device.api.**
