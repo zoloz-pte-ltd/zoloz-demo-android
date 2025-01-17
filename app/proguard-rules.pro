@@ -46,7 +46,7 @@
 -keep class com.alipay.blueshield.** { *; }
 -keep class com.alipay.deviceid.** { *; }
 -keep class com.alipay.edge.** { *; }
--keep class com.alipay.softtee.NativeHelper { *; }
--keep class com.alipay.apmobilesecuritysdk.tool.si.SIUtils { *; }
+-keep class com.alipay.softtee.** { *; }
+-keep class com.alipay.apmobilesecuritysdk.** { *; }
 -keep class face.security.device.api.** {*;}
 -dontwarn face.security.device.api.**
