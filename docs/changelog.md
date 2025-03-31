@@ -5,67 +5,76 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
-## Version 1.5.0.250114155639
+## Version 1.5.2.250328102654
 + refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
+## Version 1.5.1.250221170434
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/a087-zlq#JMDD9
+
+## Version 1.5.0.250114155639
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/bzitr7el#ubCdW
 
 ## Version 1.4.9.250106110026
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/xalv_6vz#IZjZO
 
 ## Version 1.4.8.241216154318
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/juvgoelg#UdIfy
 
 ## Version 1.4.7.241202192124
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/o-swbkmo#R8RGM
 
 ## Version 1.4.6.241114114940
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/yny3lcwj#Z46vY
 
 ## Version 1.4.5.240925162606
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ynxuckag#hzPGQ
 
 ## Version 1.4.4.240904145406
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
 **Note** : This version integrates Nearx into ZolozKit. 
 + If you have previously utilized the features of Nearx,
 + when upgrading to this version, you need to remove the line of implementation for Nearx
 + Otherwise, there will be a class conflict
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ii81yc8j#C3l2Y
 
 ## Version 1.4.3.240814151616
 + refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
 
 ## Version 1.4.2.240710110801
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ipwf9m-h#C3l2Y
 
 ## Version 1.4.2.240628152408
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ekyc-saas-updates-20240705#XMR41
 
 ## Version 1.4.1.240604171116
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ekyc-saas-updates-20240606#XMR41
 
 ## Version 1.4.0.240520142748
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ekyc-saas-updates-20240522#XMR41
 
 ## Version 1.3.7.240326103427
 + Fix some bugs.
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ekyc-saas-updates-20240411#XMR41
 
 ## Version 1.3.7.240319135852
 + Fix some bugs.
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
 
 ## Version 1.3.6.240223182256
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ekyc-saas-updates-20240301#XMR41
 
 ## Version  1.3.5.240102094458
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ekyc-saas-updates-20240104#Ai48R
 
 
 ## Version  1.3.4.231205171033
-+ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/ekyc-saas-updates-20231208#8JBXT
 
 
 ## Version 1.3.3.231103135532
 + Added a new operation guide diagram in the NativeSDK scanning page for Real ID and ID Recognition. Users will be prompted to center their ID within the capture box, for both the front and back sides of the document.
   **Notice:**
-   We will not update this changeLog later, Refer to this link about the SDK release note detail : https://docs.zoloz.com/zoloz/saas/releasenotes/ 
+   We will not update this changeLog later, Refer to this link about the SDK release note detail : https://docs.zoloz.com/zoloz/saas/releasenotes/
++ refer to https://docs.zoloz.com/zoloz/saas/releasenotes/ekyc-saas-updates-20231103#IZj88
 
 ## Version 1.3.2.231020100216
 + Improve identification document prompt experience
