@@ -1,9 +1,52 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
-
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
+
+## Version 2.0.2.250724111229
++ When you upgrade to 2.0.0 later version, you need to read carefully about this notice
++ https://yuque.antfin.com/zsw02091923/pgkf2q/abdwyabvpqqmcuke
++ there ars some  changes about integration the SDK
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ 
+## Version 2.0.1.250715140231
++ **above this version, this SDK can support Android 16KB pageSize**
++ When you upgrade to 2.0.0 later version, you need to read carefully about this notice
++ https://yuque.antfin.com/zsw02091923/pgkf2q/abdwyabvpqqmcuke
++ there ars some changes about integration the SDK
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
+## Version 2.0.0.250624102841
++ When you upgrade to 2.0.0 later version, you need to read carefully about this notice
++ there ars some changes about integration the SDK
++ https://yuque.antfin.com/zsw02091923/pgkf2q/abdwyabvpqqmcuke 
++ Specific changes:
++ Add libc++_shared.so in the src/main/libs directory.
++ Add configuration settings in the build.gradle file under the app directory.
+  ```
+  sourceSets {
+    main {
+     jniLibs.srcDirs = ['src/main/libs']
+    }
+   }
+  ```
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
+
+## Version 1.5.6.250610163507
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
+## Version 1.5.5.250519101845
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
+## Version 1.5.4.250430113339
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
+
+## Version 1.5.3.250415165302
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
+
 
 ## Version 1.5.2.250328102654
 + refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
