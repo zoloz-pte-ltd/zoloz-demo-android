@@ -4,6 +4,13 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
+## Version 2.0.4.250825152718
++ When you upgrade to 2.0.0 later version, you need to read carefully about this notice
++ https://yuque.antfin.com/zsw02091923/pgkf2q/abdwyabvpqqmcuke
++ there ars some  changes about integration the SDK
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++
+
 ## Version 2.0.3.250811111422
 + When you upgrade to 2.0.0 later version, you need to read carefully about this notice
 + https://yuque.antfin.com/zsw02091923/pgkf2q/abdwyabvpqqmcuke
