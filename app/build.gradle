@@ -46,12 +46,6 @@ android {
             signingConfig signingConfigs.debug
         }
     }
-    //！！！important
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['src/main/libs']
-        }
-    }
 
 }
 dependencies {
@@ -65,15 +59,6 @@ dependencies {
     implementation 'com.alibaba:fastjson:2.0.21.android'
     implementation "com.squareup.okio:okio:1.17.4@jar"
 
-    // !!! Note: The SDK internally depends on libc++_shared.so. Please make sure that libc++_shared is integrated in your app.
-    // If it is not integrated, the application will not function properly.
-    // Integration reference: you can copy the app/src/main/libs/ folder from this project to the your app corresponding directory.
-    // Also, add the following to your app's build.gradle:
-    //    sourceSets {
-    //        main {
-    //            jniLibs.srcDirs = ['src/main/libs']
-    //        }
-    //    }
     implementation "com.zoloz.android.build:zolozcore:${zolozKitVersion}" //This current version number is the latest version number up to the present.
     implementation "com.zoloz.android.build:doc:${zolozKitVersion}"
     implementation "com.zoloz.android.build:face:${zolozKitVersion}"

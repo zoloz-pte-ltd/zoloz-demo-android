@@ -6,14 +6,15 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 
 ## Version 2.0.4.250825152718
 + When you upgrade to 2.0.0 later version, you need to read carefully about this notice
-+ https://yuque.antfin.com/zsw02091923/pgkf2q/abdwyabvpqqmcuke
++  https://docs.zoloz.com/zoloz/saas/maintenance/w-lbpzxt
 + there ars some  changes about integration the SDK
 + refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
-+
++ this version，for easier customer integration, we have merged the libc++_shared.so library into the zolozcore package.
++ you don't need to integrated the libc++_shared.so again.
 
 ## Version 2.0.3.250811111422
 + When you upgrade to 2.0.0 later version, you need to read carefully about this notice
-+ https://yuque.antfin.com/zsw02091923/pgkf2q/abdwyabvpqqmcuke
++ https://docs.zoloz.com/zoloz/saas/maintenance/w-lbpzxt
 + there ars some  changes about integration the SDK
 + refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
 +
