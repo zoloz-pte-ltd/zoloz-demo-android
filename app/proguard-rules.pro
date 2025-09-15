@@ -31,6 +31,7 @@
 -keep class com.alibaba.fastjson2.** { *; }
 -keep class com.zoloz.zhub.** { *; }
 -keep class com.alipay.zoloz.** { *; }
+-keep class com.zoloz.zeta.** { *; }
 -keep class com.zoloz.zcore.facade.common.** { *; }
 -keep class com.alipay.android.phone.zoloz.** { *; }
 -keep class com.alipay.biometrics.** { *; }
