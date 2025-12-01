@@ -4,6 +4,13 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
+## Version 2.0.9.251125163451
++ When you upgrade to 2.0.0 later version, you need to read carefully about this notice
++  https://docs.zoloz.com/zoloz/saas/maintenance/w-lbpzxt
++ there ars some  changes about integration the SDK
++ refer to  https://docs.zoloz.com/zoloz/saas/releasenotes/
++ this version，for easier customer integration, we have merged the libc++_shared.so library into the zolozcore package.
++ you don't need to integrated the libc++_shared.so again.
 ## Version 2.0.8.251113151316
 + When you upgrade to 2.0.0 later version, you need to read carefully about this notice
 +  https://docs.zoloz.com/zoloz/saas/maintenance/w-lbpzxt
