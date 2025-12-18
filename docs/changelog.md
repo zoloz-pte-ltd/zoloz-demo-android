@@ -4,6 +4,8 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
+
+## Version 2.1.0.251217170122
 ## Version 2.0.9.251125163451
 + When you upgrade to 2.0.0 later version, you need to read carefully about this notice
 +  https://docs.zoloz.com/zoloz/saas/maintenance/w-lbpzxt
