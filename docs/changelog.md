@@ -3,6 +3,12 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
+## Version  2.1.4.260311152000
+
++ Fixed chameleon configuration issues (passport, paper frame, manual capture button), 
++ improved face capture region constraints and integrity, and resolved WebSocket status 
++ and download problems in video verification.
++ 
 ## Version  2.1.3.260206183705
 
 + Fix compatibility issues on some devices
