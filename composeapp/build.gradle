@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+}
+
+android {
+    namespace 'com.zoloz.saas.example.composeapp'
+    compileSdk {
+        version = release(36)
+    }
+
+    defaultConfig {
+        applicationId "com.zoloz.saas.example.composeapp"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        compose true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.18.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.10.0'
+    implementation 'androidx.activity:activity-compose:1.13.0'
+    implementation platform('androidx.compose:compose-bom:2026.03.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3:1.4.0'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    implementation "androidx.datastore:datastore-preferences:1.2.1"
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'com.alibaba:fastjson:2.0.21.android'
+    implementation "com.squareup.okio:okio:1.17.4@jar"
+    implementation("com.airbnb.android:lottie:2.7.0")
+
+    // needed by fastjson
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
+
+    implementation "com.zoloz.android.build:zolozcore:${zolozKitVersion}" //This current version number is the latest version number up to the present.
+    implementation "com.zoloz.android.build:doc:${zolozKitVersion}"
+    implementation "com.zoloz.android.build:face:${zolozKitVersion}"
+    implementation "com.zoloz.android.build:xnn:${zolozKitVersion}"
+    implementation "com.zoloz.android.build:faceguard:${zolozKitVersion}"
+    implementation "com.zoloz.android.build:apsecurity:${zolozKitVersion}"
+
+    //if need NFC Reader, add below implementation
+    implementation "com.zoloz.android.build:znfc:${zolozKitVersion}"
+
+}

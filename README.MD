@@ -1,3 +1,4 @@
+<!-- @formatter:off -->
 ## ZOLOZ Android Example
 
 ### Background
@@ -24,7 +25,7 @@ cd zoloz-demo-android
 
 ### Example usage
 
-1. Refer to [this example](https://github.com/zoloz-pte-ltd/zoloz-integration-examples/tree/master/basic/realid-native) to setup a minimum web server to act as your biz server bridging the demo app and the RealId service. 
+1. Refer to [this example](https://github.com/zoloz-pte-ltd/zoloz-integration-examples/tree/master/basic/realid-native) to setup a minimum web server to act as your biz server bridging the demo app and the RealId service.
 
 2. Open the application, fill the inbox of "HOST" with "http://lan_ip:lan_port"
 
@@ -56,9 +57,9 @@ cd zoloz-demo-android
    implementation 'com.alibaba:fastjson:2.0.21.android'
    ```
 
-  important: The new SDK version internally depends on the libc++_shared.so library. 
+  important: The new SDK version internally depends on the libc++_shared.so library.
   You need to integrate this library into their projects yourselves; failing to do so may lead to runtime exceptions.
-  
+
 3. Get meta info
 
    ```groovy
@@ -69,6 +70,7 @@ cd zoloz-demo-android
 
 5. Construct `ZLZRequest` object with `clientCfg` returned from RealId server:
 
+   **Java:**
    ```java
    ZLZRequest request = new ZLZRequest();
    request.bizConfig = new HashMap<>();
@@ -78,18 +80,41 @@ cd zoloz-demo-android
    return request;
    ```
 
-6. Start the ZOLOZ SDK with  `ZLZRequest`  and you need to implement the callback functions to handle the eKYC outcome. 
+   **Kotlin:**
+   ```kotlin
+   val request = ZLZRequest()
+   request.bizConfig[ZLZConstants.CONTEXT] = context
+   request.bizConfig[ZLZConstants.LOCALE] = locale
+   request.bizConfig[ZLZConstants.CHAMELEON_CONFIG_PATH] = "config_realId.zip"
+   request.zlzConfig = clientCfg
+   ```
 
+6. Start the ZOLOZ SDK with  `ZLZRequest`  and you need to implement the callback functions to handle the eKYC outcome.
+
+   **Java:**
    ```java
    ZLZFacade.getInstance().start(request, new IZLZCallback() {
        @Override
        public void onCompleted(ZLZResponse response) {
        }
-   
+
        @Override
        public void onInterrupted(ZLZResponse response) {
        }
    });
+   ```
+
+   **Kotlin:**
+   ```kotlin
+   ZLZFacade.getInstance().start(request, object : IZLZCallback {
+       override fun onCompleted(response: ZLZResponse?) {
+           // Handle completion
+       }
+
+       override fun onInterrupted(response: ZLZResponse?) {
+           // Handle interruption
+       }
+   })
    ```
 
    > The eKYC outcome only contains a simple code demostrating the status of the eKYC process, you have to call RealId checkResult API to get detailed information of the eKYC process.
