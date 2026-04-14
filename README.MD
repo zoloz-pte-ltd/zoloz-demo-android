@@ -49,6 +49,8 @@ cd zoloz-demo-android
    implementation "com.zoloz.android.build:zolozcore:${zolozKitVersion}"
    implementation "com.zoloz.android.build:doc:${zolozKitVersion}"
    implementation "com.zoloz.android.build:face:${zolozKitVersion}"
+   implementation "com.zoloz.android.build:facebase:${zolozKitVersion}"
+   implementation "com.zoloz.android.build:facedeepfake:${zolozKitVersion}"
    implementation "com.zoloz.android.build:xnn:${zolozKitVersion}"
    implementation "com.zoloz.android.build:faceguard:${zolozKitVersion}"
    implementation "com.zoloz.android.build:apsecurity:${zolozKitVersion}"
