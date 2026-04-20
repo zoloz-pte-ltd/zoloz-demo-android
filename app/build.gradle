@@ -72,5 +72,6 @@ dependencies {
     implementation "com.zoloz.android.build:znfc:${zolozKitVersion}"
     //if need Location module, add below implementation
     implementation "com.zoloz.android.build:location:${zolozKitVersion}"
+    implementation "com.zoloz.android.build:nfc_cnid:${zolozKitVersion}"
     implementation("com.airbnb.android:lottie:2.7.0")
 }
