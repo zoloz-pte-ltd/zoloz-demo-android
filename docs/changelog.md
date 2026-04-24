@@ -5,11 +5,11 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 ## Version  2.1.7.260423163215
 + Security Enhancement
++ 
 
 ## Version  2.1.6.260414110801
-
-+ expand nfc functionality 
 + update environment
++ NFC supports mainland China documents.
 
 ## Version 2.1.5.260330153149
 
