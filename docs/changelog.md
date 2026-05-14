@@ -3,6 +3,13 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
+
+## Version  2.1.8.260513101836
++ Security Enhancement
++ Remove ISP module
++ NFC upgrade
++ Build optimization
+
 ## Version  2.1.7.260423163215
 + Security Enhancement
 + 
