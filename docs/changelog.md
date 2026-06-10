@@ -4,6 +4,14 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
+## Version  2.1.9.260609095840
++ Add face brand logo and text hiding config
++ Fix TTS interruption logic
++ Optimize video encoding params
++ Update apsecurity sdk to support 16KB page size
++ Fix example image display logic
++ Fix null list return issue and add chameleon example image config switch
+
 ## Version  2.1.8.260513101836
 + Security Enhancement
 + Remove ISP module
