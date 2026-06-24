@@ -4,6 +4,12 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
+## Version  2.2.0.260623133930
++ Add chameleon example image switch reporting
++ Optimize passport auto-classify prompt copy and i18n
++ Fix crash log upload in BaseCameraPermissionFragment
++ Update toyger and face_base_assets
++ Fix client config text display when empty
 ## Version  2.1.9.260609095840
 + Add face brand logo and text hiding config
 + Fix TTS interruption logic
