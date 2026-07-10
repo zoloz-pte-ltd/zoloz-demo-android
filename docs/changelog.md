@@ -4,6 +4,11 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
+## Version  2.2.1.260710151010
++ Enhance zdoc document recognition (CancelCode, ZdocAlgorithmFragment)
++ Optimize video will-verification controller and view
++ Enhance ZIM platform (ZimPlatform, ZimLitePlatform)
++ Update NFC-CN library
 ## Version  2.2.0.260623133930
 + Add chameleon example image switch reporting
 + Optimize passport auto-classify prompt copy and i18n

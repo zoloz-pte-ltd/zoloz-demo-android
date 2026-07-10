@@ -28,7 +28,7 @@ android {
     compileSdkVersion 35
     defaultConfig {
         applicationId "com.zoloz.saas.example"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 35
         versionCode 29
         versionName "1.1.0.6"
