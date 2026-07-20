@@ -48,7 +48,6 @@ cd zoloz-demo-android
    ```groovy
    implementation "com.zoloz.android.build:zolozcore:${zolozKitVersion}"
    implementation "com.zoloz.android.build:doc:${zolozKitVersion}"
-   implementation "com.zoloz.android.build:face:${zolozKitVersion}"
    implementation "com.zoloz.android.build:facebase:${zolozKitVersion}"
    implementation "com.zoloz.android.build:facedeepfake:${zolozKitVersion}"
    implementation "com.zoloz.android.build:xnn:${zolozKitVersion}"
