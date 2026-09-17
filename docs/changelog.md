@@ -4,6 +4,30 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
+## Version  2.2.5.260909145122
++ Upgrade SecureRandom and SHA-256 algorithm for weak hash/random remediation
++ Add WebSocket client for video verification
++ Remove deprecated RPC-Lite module
++ Update security utility classes for config and signing
+
+## Version  2.2.4.260825162546
++ Add dynamic configurable video verification timeout
++ Add direction judgment module (OrientationJudge)
++ Enhance NFC EEP DG11 read validation
++ Fix OrientationJudge NPE and camera fallback logic
+
+## Version  2.2.3.260806152621
++ Simplify and optimize voice recognition and TTS logic, migrate to Aliyun standard API
++ Adapt Android 16 large screen in manifest
++ Set appkey dynamically based on language environment
++ Refactor TTS voice config management
++ Adapt Google Play policy, upgrade targetSdk to Android 16
++ Remove deprecated build.gradle file
++ Update multi-language appkey naming
++ Update toyger for 2026 8A
++ Fix TTS null pointer exception
++ Add no-network-connection toast prompt in demo
++ Fix blink prompt not displaying after multi-action retry
 ## Version  2.2.1.260710151010
 + Enhance zdoc document recognition (CancelCode, ZdocAlgorithmFragment)
 + Optimize video will-verification controller and view
