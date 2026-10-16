@@ -4,6 +4,11 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
+## Version  2.2.7.261014100657
++ NFC passport MRZ OCR upload with complete MRZ information
++ Add MrzOcrInfoParser for NFC passport data extraction and optimization
++ Upgrade NFC module version to 2.0.0.260928181225
+
 ## Version  2.2.5.260909145122
 + Upgrade SecureRandom and SHA-256 algorithm for weak hash/random remediation
 + Add WebSocket client for video verification
