@@ -4,6 +4,15 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 + note: when you update new version, you also need to check the latest proguard file 
 + https://docs.zoloz.com/zoloz/saas/integration/neug2p#G6ZlO
 
+## Version  2.2.8.261029095929
++ Fix NFC invalid context causing no callback to SDK
++ Fix zimInitResp crash on initialization failure
++ Fix toygerService cross-thread invocation crash
++ Fix camera metadata null pointer and document autofocus NPE
++ Add RealID location detection option with VPN detection and permission optimization
++ Fix Pixel Fold screen switch issue for document capture
++ Android client stability improvements and logging refactoring
+
 ## Version  2.2.7.261014100657
 + NFC passport MRZ OCR upload with complete MRZ information
 + Add MrzOcrInfoParser for NFC passport data extraction and optimization
